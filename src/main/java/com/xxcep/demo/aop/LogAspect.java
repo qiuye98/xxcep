@@ -12,14 +12,14 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LogAspect {
 
-	@Pointcut("execution( * com.example.demo.mapper.TeacherMapper.*(..))")
-	public void pointcut() {
-	}
-
-	@Before("pointcut()")
-	public void log(JoinPoint jp) {
-		String methodName = jp.getSignature().getName();
-		System.out.println("the method [" + methodName + "] begins with " + Arrays.asList(jp.getArgs()));
-	}
+//	@Pointcut("execution( * com.example.demo.mapper.TeacherMapper.*(..))")
+//	public void pointcut() {
+//	}
+//
+//	@Before("pointcut()")
+//	public void log(JoinPoint jp) {
+//		String methodName = jp.getSignature().getName();
+//		System.out.println("the method [" + methodName + "] begins with " + Arrays.asList(jp.getArgs()));
+//	}
 
 }
