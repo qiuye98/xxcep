@@ -2,6 +2,8 @@ package com.xxcep.demo.entity;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+
 /**
  * <p>
  * 
@@ -13,7 +15,7 @@ import java.io.Serializable;
 public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    @TableId
     private Integer studentId;
 
     private String name;
