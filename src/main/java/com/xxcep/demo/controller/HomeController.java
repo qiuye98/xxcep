@@ -27,15 +27,33 @@ public class HomeController {
 			
 			System.out.println(user.toString());
 		}
-		model.addAttribute("user",users.get(3));
-		
-//		return "student/homework";
-		return "teacher/student_info";
+		model.addAttribute("users",users);
+		User user = null;
+//		user = loginServiceImp.ValidateUser(account, password);
+		user = users.get(1);
+		if (user == null) {
+			return "index";
+		}
+		else {
+			model.addAttribute("user",user);
+			if (loginServiceImp.isTeacher(user.getUserId())) {
+				return "teacher/student_info";
+			}else {
+				return "student/homework";
+			}
+		}
 	}
 
 	@GetMapping("/")
 	public String index(Model model) {
 		return "index";
+	}
+	
+	@GetMapping("/class_file")
+	public String class_file(Model model) {
+		User user = new User();
+		model.addAttribute("user",user);
+		return "teacher/class_file_info";
 	}
 
 }
