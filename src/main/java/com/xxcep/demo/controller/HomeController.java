@@ -11,11 +11,12 @@ public class HomeController {
 	
 	@GetMapping("/login")
 	public String login(Model model, String account, String password) {
-		
-		
-		
-		
 		return "student/homework";
+	}
+
+	@GetMapping(value = "/homeworkDetail")
+	public String toHomeworkDetail(Model model, String account, String password) {
+		return "student/homework-detail";
 	}
 
 	@GetMapping("/")
