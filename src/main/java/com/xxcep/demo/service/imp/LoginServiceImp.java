@@ -1,7 +1,5 @@
 package com.xxcep.demo.service.imp;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +28,8 @@ public class LoginServiceImp implements LoginService {
 	
 	@Override
 	public User ValidateUser(String account, String password) {
-		User user = null;
-//		user = userMapper.validUser(account, password);
-		return user;
+		System.out.println(account+password);
+		return userMapper.validUser(account, password);
 	}
 	
 	

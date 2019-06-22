@@ -31,9 +31,9 @@ public interface UserMapper extends BaseMapper<User> {
 	@Select("select * from User")
 	public List<User> findAll(); 
 
-//	@Select("select * from User where account=#{account} and password=#{password}")
-//	@ResultMap(value = "UserMap")
-//	public User validUser(@Param("account") String account, @Param("password") String password);
+	@Select("select * from user where account=#{account} and password=#{password}")
+	@ResultMap(value = "userMap")
+	public User validUser(@Param("account") String account, @Param("password") String password);
 
 //	@Select("select * from t_User where User_name like concat('%',#{name},'%')")
 //	@ResultMap(value = "UserMap")
