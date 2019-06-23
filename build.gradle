@@ -33,4 +33,5 @@ dependencies {
 	
 	compile 'mysql:mysql-connector-java:5.1.47'
 	compile group: 'com.baomidou', name: 'mybatis-plus-boot-starter', version: '3.0.6'
+	compile group: 'commons-io', name: 'commons-io', version: '2.6'
 }
