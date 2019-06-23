@@ -32,21 +32,21 @@
 		<div class="login_wrapper">
 			<div class="animate form login_form">
 				<section class="login_content">
-					<form>
+					<form action="/login" method="post">
 						<h1>登 录</h1>
 						<div>
-							<input type="text" name="account" th:value="${account}" class="form-control" placeholder="用户名" required="" />
+							<input type="text" name="account" th:value="${account}" class="form-control" placeholder="用户名"  />
 						</div>
 						<div>
 							<input type="password" name="password" th:value="${password}" class="form-control" placeholder="密  码" required="" />
 						</div>
 						<div>
-							<a class="btn btn-default submit" href="/login">登 录</a> <a
-								class="reset_pass" href="#">忘了密码?</a>
+							<input type="submit"/> 
+							<a class="reset_pass" href="#">忘了密码?</a>
 						</div>
-
+						
 						<div class="clearfix"></div>
-
+						
 						<div class="separator">
 							<p class="change_link">
 								前往? <a href="#signup" class="to_register"> 创建账号 </a>
