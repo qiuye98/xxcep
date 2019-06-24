@@ -246,8 +246,8 @@
                                 <div class="row">
                                     <h5>上传答案</h5>
                                     <div>
-                                        <input type="file" id="file" name="myfile" />
-                                        <input type="button" onclick="UpladFile()" value="上传" />
+                                        <input type="file" id="file" name="myfile"/>
+                                        <input type="button" onclick="UpladFile()" value="上传"/>
                                     </div>
                                 </div>
                             </div>
@@ -277,24 +277,8 @@
 <script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
 <!-- NProgress -->
 <script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+
 <!-- Custom Theme Scripts -->
 <script th:src="@{/js/custom.min.js}"></script>
-<script type="text/javascript">
-    function UpladFile() {
-        var fileObj = document.getElementById("file").files[0]; // 获取文件对象
-        var FileController = "/fileUpload";                    // 接收上传文件的后台地址
-        // FormData 对象
-        var form = new FormData();
-        form.append("author", "G&H");                        // 可以增加表单数据
-        form.append("file", fileObj);                           // 文件对象
-        // XMLHttpRequest 对象
-        var xhr = new XMLHttpRequest();
-        xhr.open("post", FileController, true);
-        xhr.onload = function () {
-            alert("上传完成!");
-        };
-        xhr.send(form);
-    }
-</script>
 </body>
 </html>
