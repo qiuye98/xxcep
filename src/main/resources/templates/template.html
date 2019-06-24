@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head th:fragment="header">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>课程平台</title>
+
+<!-- Bootstrap -->
+<link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}"
+	rel="stylesheet">
+<!-- Font Awesome -->
+<link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet">
+<!-- NProgress -->
+<link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet">
+
+<!--     Custom Theme Style -->
+<link th:href="@{/css/custom.min.css}" rel="stylesheet">
+</head>
+
+<body>
+
+
+
+
+	<!-- footer content -->
+	<footer th:fragment="footer">
+		<div class="pull-right">XXCEP - Admin by "三个葫芦娃"</div>
+		<div class="clearfix"></div>
+		<!-- jQuery -->
+		<script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+		<!-- Bootstrap -->
+		<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+		<!-- FastClick -->
+		<script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
+		<!-- NProgress -->
+		<script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+
+		<!-- Custom Theme Scripts -->
+		<script th:src="@{/js/custom.min.js}"></script>
+	</footer>
+	<!-- /footer content -->
+
+</body>
+</html>
