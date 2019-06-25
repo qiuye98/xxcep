@@ -2,7 +2,6 @@ package com.xxcep.demo.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -16,9 +15,22 @@ import org.springframework.ui.Model;
  */
 @Controller
 public class HomeworkController {
-	@GetMapping(value = "/student/homeworkDetail")
-	public String toHomeworkDetail(Model model, String account, String password) {
-		return "student/homework-detail";
-	}
+
+
+    @GetMapping("/student/detail")
+    public String toStudentHomeworkDetail() {
+        return "student/homework-detail";
+    }
+
+    @GetMapping("/teacher/homework")
+    public String toStudentHome() {
+        return "teacher/homework";
+    }
+
+
+    @GetMapping("/teacher/detail")
+    public String toTeacherHomeworkDetail() {
+        return "teacher/homework-detail";
+    }
 }
 
