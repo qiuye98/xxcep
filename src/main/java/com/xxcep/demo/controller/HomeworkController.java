@@ -16,7 +16,11 @@ import org.springframework.ui.Model;
 @Controller
 public class HomeworkController {
 
-
+	@GetMapping("/student/homework")
+    public String toStudentHomework() {
+        return "student/homework";
+    }
+	
     @GetMapping("/student/detail")
     public String toStudentHomeworkDetail() {
         return "student/homework-detail";
