@@ -214,7 +214,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
-                                <h2>我的作业</h2>
+                                <h2>作业2：大型web系统</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                                     </li>
@@ -235,50 +235,19 @@
                             </div>
                             <div class="x_content">
                                 <div class="row">
-                                    <div class="col-md-4 center-block">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">第一次作业</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                开始时间：2019-06-17 09:27
-                                                截止时间：2019-06-28 22:27
-                                                作业状态： 待做
-                                            </div>
-                                            <div class="panel-footer">
-                                                <button type="button">做作业</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 center-block">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">第一次作业</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                开始时间：2019-06-17 09:27
-                                                截止时间：2019-06-28 22:27
-                                                作业状态： 待做
-                                            </div>
-                                            <div class="panel-footer">
-                                                <button type="button">做作业</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 center-block">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">第一次作业</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <div>开始时间：2019-06-17 09:27</div>
-                                                <div>截止时间：2019-06-28 22:27</div>
-                                                <div>作业状态： 待做</div>
-                                            </div>
-                                            <div class="panel-footer">
-                                                <button type="button" class="btn-success">做作业</button>
-                                            </div>
-                                        </div>
+                                    <h5>题目要求</h5>
+                                    做教材p300“实验5SQL语句应用”实验步骤中的（1）-（30）共30道小题
+                                    请注意截至日期！请在之前上传附件提交！！！！！
+                                </div>
+                                <div class="row">
+                                    <h5>我的答案</h5>
+                                    <div>16203130-谷伟帅-作业3.docx</div>
+                                </div>
+                                <div class="row">
+                                    <h5>上传答案</h5>
+                                    <div>
+                                        <input type="file" id="file" name="myfile" />
+                                        <input type="button" onclick="UpladFile()" value="上传" />
                                     </div>
                                 </div>
                             </div>
@@ -308,8 +277,24 @@
 <script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
 <!-- NProgress -->
 <script th:src="@{/vendors/nprogress/nprogress.js}"></script>
-
 <!-- Custom Theme Scripts -->
 <script th:src="@{/js/custom.min.js}"></script>
+<script type="text/javascript">
+    function UpladFile() {
+        var fileObj = document.getElementById("file").files[0]; // 获取文件对象
+        var FileController = "/fileUpload";                    // 接收上传文件的后台地址
+        // FormData 对象
+        var form = new FormData();
+        form.append("author", "G&H");                        // 可以增加表单数据
+        form.append("file", fileObj);                           // 文件对象
+        // XMLHttpRequest 对象
+        var xhr = new XMLHttpRequest();
+        xhr.open("post", FileController, true);
+        xhr.onload = function () {
+            alert("上传完成!");
+        };
+        xhr.send(form);
+    }
+</script>
 </body>
 </html>

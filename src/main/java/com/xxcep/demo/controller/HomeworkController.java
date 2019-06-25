@@ -2,9 +2,8 @@ package com.xxcep.demo.controller;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 /**
  * <p>
@@ -15,7 +14,6 @@ import org.springframework.stereotype.Controller;
  * @since 2019-06-13
  */
 @Controller
-@RequestMapping("/homework")
 public class HomeworkController {
 
     @GetMapping("/student/detail")
@@ -33,7 +31,6 @@ public class HomeworkController {
     public String toTeacherHomeworkDetail() {
         return "teacher/homework-detail";
     }
-
 
 }
 
