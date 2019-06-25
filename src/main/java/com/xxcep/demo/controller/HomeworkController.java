@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 @Controller
 public class HomeworkController {
 
+
     @GetMapping("/student/detail")
     public String toStudentHomeworkDetail() {
         return "student/homework-detail";
@@ -31,6 +32,5 @@ public class HomeworkController {
     public String toTeacherHomeworkDetail() {
         return "teacher/homework-detail";
     }
-
 }
 

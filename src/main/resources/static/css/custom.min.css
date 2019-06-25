@@ -4674,7 +4674,7 @@ ul.notifications {
 }
 
 .dropzone {
-	min-height: 300px;
+	min-height: 100px;
 	border: 1px solid #e5e5e5
 }
 

@@ -27,31 +27,37 @@
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="x_panel">
 
-								<div>
-									<form action="courseware-upload" method=post>
-										<input type="file" id="courseware" name="courseware">
+								<div class="center">
+									<form class="form-inline" action="/courseware-upload" method=post>
+										<div class="form-group">
+											<input type="file" id="courseware" name="courseware" />
+										</div>
+										<input type="submit" value="上传新课件" />
 									</form>
 								</div>
 								<br />
-
-								<!-- <table class="table table-striped">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>账号</th>
-								<th>姓名</th>
-								<th>性别</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:each="user,status : ${users}">
-								<td th:text="${status.count}"></td>
-								<td th:text="${user.account}"></td>
-								<td th:text="${user.name}"></td>
-								<td th:text="${user.sex}"></td>
-							</tr>
-						</tbody>
-					</table> -->
+								<!-- start project list -->
+								<table class="table table-striped projects">
+									<thead>
+										<tr>
+											<th style="width: 5%">#</th>
+											<th style="width: 15%">#Edit</th>
+											<th style="width: 80%">Project Name</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>#</td>
+											<td>
+												<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> 下载 </a> 
+											</td>
+											<td>
+												<a>Pesamakini Backend UI</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- end project list -->
 							</div>
 						</div>
 					</div>
@@ -65,4 +71,4 @@
 		</div>
 	</div>
 </body>
-</html>
+</html>	

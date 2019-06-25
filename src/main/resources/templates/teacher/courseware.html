@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template::header" />
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<!-- side_bar  -->
+			<div th:replace="nav::teacher_sidebar"></div>
+			<!-- /side_bar  -->
+
+			<!-- top navigation -->
+			<div th:replace="nav::top_nav"></div>
+			<!-- /top navigation -->
+
+			<!-- page content -->
+			<div class="right_col" role="main">
+				<div class="">
+					<div class="page-title">
+						<div class="title_left">
+							<h3>作业</h3>
+						</div>
+						<div th:replace="nav::title_search"></div>
+					</div>
+					<div class="clearfix"></div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="x_panel">
+
+								<div class="">
+									<form class="form-inline" action="/courseware-upload" method=post enctype="multipart/form-data">
+										<div class="form-group">
+											<input type="file" multiple="multiple" id="coursewareFile" name="coursewareFile" />
+										</div>
+										<input type="submit" value="上传新课件" />
+									</form>
+								</div>
+								<br />
+								<!-- start project list -->
+								<table class="table table-striped projects">
+									<thead>
+										<tr>
+											<th style="width: 5%">#</th>
+											<th style="width: 15%">#Edit</th>
+											<th style="width: 80%">Project Name</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>#</td>
+											<td>
+												<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> 下载 </a> 
+												<a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> 删除 </a>
+											</td>
+											<td>
+												<a>Pesamakini Backend UI</a>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+								<!-- end project list -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- /page content -->
+
+			<!-- footer content -->
+			<footer th:replace="template::footer"></footer>
+			<!-- /footer content -->
+		</div>
+	</div>
+</body>
+</html>
