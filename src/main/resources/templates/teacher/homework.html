@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="template::header" />
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <!-- side_bar  -->
+        <div th:replace="nav::teacher_sidebar"></div>
+        <!-- /side_bar  -->
+
+        <!-- top navigation -->
+        <div th:replace="nav::top_nav"></div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>作业</h3>
+                    </div>
+                    <div th:replace="nav::title_search"></div>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>我的作业</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                           aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Settings 1</a>
+                                            </li>
+                                            <li><a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <div class="row">
+                                    <div class="col-md-4 center-block">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">第一次作业</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div>开始时间：2019-06-17 09:27</div>
+                                                <div>截止时间：2019-06-28 22:27</div>
+                                                <div>作业状态： 待做</div>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <button type="button" class="btn-success"><a href="/teacher/detail">做作业</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 center-block">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">第一次作业</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div>开始时间：2019-06-17 09:27</div>
+                                                <div>截止时间：2019-06-28 22:27</div>
+                                                <div>作业状态： 待做</div>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <button type="button" class="btn-success"><a href="/teacher/detail">做作业</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 center-block">
+                                        <div class="panel panel-default">
+                                            <div class="panel-heading">
+                                                <h3 class="panel-title">第一次作业</h3>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div>开始时间：2019-06-17 09:27</div>
+                                                <div>截止时间：2019-06-28 22:27</div>
+                                                <div>作业状态： 待做</div>
+                                            </div>
+                                            <div class="panel-footer">
+                                                <button type="button" class="btn-success"><a href="/teacher/detail">做作业</a>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /page content -->
+
+
+        <!-- footer content -->
+        <footer th:replace="template::footer"></footer>
+        <!-- /footer content -->
+    </div>
+</div>
+
+</body>
+</html>
