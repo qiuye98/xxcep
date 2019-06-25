@@ -3,6 +3,8 @@ package com.xxcep.demo.entity;
 import java.io.Serializable;
 import java.sql.Blob;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+
 /**
  * <p>
  * 
@@ -14,7 +16,8 @@ import java.sql.Blob;
 public class Courseware implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    @TableId
     private Integer courseId;
 
     private String name;

@@ -16,8 +16,6 @@ import org.springframework.ui.Model;
  */
 @Controller
 public class HomeworkController {
-	
-	
 	@GetMapping(value = "/student/homeworkDetail")
 	public String toHomeworkDetail(Model model, String account, String password) {
 		return "student/homework-detail";

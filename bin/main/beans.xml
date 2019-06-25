@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置请求编码格式，必须与JSP中的pageEncoding属性一致 -->
+		<property name="defaultEncoding" value="UTF-8" />
+		<!-- 设置允许上传文件的最大值（2MB），单位为字节 -->
+		<property name="maxUploadSize" value="10485760" />
+	</bean>
+</beans>

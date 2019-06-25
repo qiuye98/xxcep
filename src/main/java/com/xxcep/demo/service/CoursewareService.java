@@ -12,5 +12,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @since 2019-06-13
  */
 public interface CoursewareService extends IService<Courseware> {
+	
+
 
 }

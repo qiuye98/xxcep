@@ -6,7 +6,7 @@
     <resultMap id="BaseResultMap" type="com.xxcep.demo.entity.Courseware">
         <id column="course_id" property="courseId" />
         <result column="name" property="name" />
-        <result column="file" property="file" />
+        <result column="file" property="file" typeHandler="org.apache.ibatis.type.BlobTypeHandler"/>
     </resultMap>
 
     <!-- 通用查询结果列 -->

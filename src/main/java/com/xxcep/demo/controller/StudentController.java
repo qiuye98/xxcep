@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.xxcep.demo.entity.User;
-import com.xxcep.demo.service.imp.LoginServiceImp;
+import com.xxcep.demo.service.impl.LoginServiceImp;
 
 import java.util.List;
 
