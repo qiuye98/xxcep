@@ -5,14 +5,15 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.xxcep.demo.entity.Homework">
         <id column="homework_id" property="homeworkId" />
+        <result column="title" property="title" />
         <result column="begin_date" property="beginDate" />
         <result column="end_date" property="endDate" />
-        <result column="homeword_name" property="homewordName" />
+        <result column="content" property="content" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        homework_id, begin_date, end_date, homeword_name
+        title, homework_id, begin_date, end_date, content
     </sql>
 
 </mapper>

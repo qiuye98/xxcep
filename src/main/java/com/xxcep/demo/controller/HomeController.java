@@ -62,10 +62,5 @@ public class HomeController {
 			return "redirect:/student/homework";
 		}
 	}
-
-	@GetMapping("/chat")
-	public String chat(Model model) {
-		return "student/chat";
-	}
 	
 }
