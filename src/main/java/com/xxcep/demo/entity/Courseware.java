@@ -1,7 +1,6 @@
 package com.xxcep.demo.entity;
 
 import java.io.Serializable;
-import java.sql.Blob;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 
@@ -17,12 +16,28 @@ public class Courseware implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
-    @TableId
+    
+    public Courseware(Integer courseId, String name, String coursewarePath) {
+		super();
+		this.courseId = courseId;
+		this.name = name;
+		this.coursewarePath = coursewarePath;
+	}
+
+    	
+    
+	public Courseware() {
+		super();
+	}
+
+
+
+	@TableId
     private Integer courseId;
 
     private String name;
 
-    private Blob file;
+    private String coursewarePath;
 
 
     public Integer getCourseId() {
@@ -41,12 +56,12 @@ public class Courseware implements Serializable {
         this.name = name;
     }
 
-    public Blob getFile() {
-        return file;
+    public String getCoursewarePath() {
+        return coursewarePath;
     }
 
-    public void setFile(Blob file) {
-        this.file = file;
+    public void setCoursewarePath(String coursewarePath) {
+        this.coursewarePath = coursewarePath;
     }
 
     @Override
@@ -54,7 +69,7 @@ public class Courseware implements Serializable {
         return "Courseware{" +
         "courseId=" + courseId +
         ", name=" + name +
-        ", file=" + file +
+        ", coursewarePath=" + coursewarePath +
         "}";
     }
 }
