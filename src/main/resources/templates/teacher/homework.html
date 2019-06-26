@@ -28,6 +28,7 @@
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_panel">
                             <div class="x_title">
+
                                 <h2>我的作业</h2>
                                 <ul class="nav navbar-right panel_toolbox">
                                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
@@ -48,55 +49,25 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <div class="row">
+                                <button type="button" class="btn-success"><a href="/teacher/detail">新增</a></button>
+
+                                <div class="row" th:each="hw : ${homeworkList}">
                                     <div class="col-md-4 center-block">
                                         <div class="panel panel-default">
                                             <div class="panel-heading">
-                                                <h3 class="panel-title">第一次作业</h3>
+                                                <h3 class="panel-title" th:text="${hw.title}"></h3>
                                             </div>
                                             <div class="panel-body">
-                                                <div>开始时间：2019-06-17 09:27</div>
-                                                <div>截止时间：2019-06-28 22:27</div>
-                                                <div>作业状态： 待做</div>
+                                                <div th:data="${hw.beginDate}">开始时间：2019-06-17 09:27</div>
+                                                <div th:data="${hw.endDate}">截止时间：2019-06-28 22:27</div>
                                             </div>
                                             <div class="panel-footer">
-                                                <button type="button" class="btn-success"><a href="/teacher/detail">做作业</a>
+                                                <button type="button" class="btn-success"><a href="/teacher/detail">修改</a>
                                                 </button>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-4 center-block">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">第一次作业</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <div>开始时间：2019-06-17 09:27</div>
-                                                <div>截止时间：2019-06-28 22:27</div>
-                                                <div>作业状态： 待做</div>
-                                            </div>
-                                            <div class="panel-footer">
-                                                <button type="button" class="btn-success"><a href="/teacher/detail">做作业</a>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 center-block">
-                                        <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <h3 class="panel-title">第一次作业</h3>
-                                            </div>
-                                            <div class="panel-body">
-                                                <div>开始时间：2019-06-17 09:27</div>
-                                                <div>截止时间：2019-06-28 22:27</div>
-                                                <div>作业状态： 待做</div>
-                                            </div>
-                                            <div class="panel-footer">
-                                                <button type="button" class="btn-success"><a href="/teacher/detail">做作业</a>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>

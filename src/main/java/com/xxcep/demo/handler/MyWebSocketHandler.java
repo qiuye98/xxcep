@@ -31,7 +31,6 @@ public class MyWebSocketHandler extends TextWebSocketHandler {
         userHandler.addUser(session);
     }
 
-
     @Override
     public void handleTransportError(WebSocketSession session, Throwable exception) throws Exception {
         if (session.isOpen()) {

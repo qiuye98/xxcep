@@ -11,9 +11,6 @@ import com.xxcep.demo.entity.Courseware;
 import com.xxcep.demo.entity.User;
 import com.xxcep.demo.service.impl.CoursewareServiceImpl;
 
-import static org.assertj.core.api.Assertions.in;
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;

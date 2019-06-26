@@ -1,25 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="utf-8">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>我的聊天室</title>
-
-    <title>课程平台 | 老师 </title>
-    <link rel="stylesheet" type="text/css" th:href="@{css/mycss.css}">
-
-    <!-- Bootstrap -->
-    <link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}" rel="stylesheet">
-    <!-- NProgress -->
-    <link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet">
-
-    <!--     Custom Theme Style -->
-    <link th:href="@{/css/custom.min.css}" rel="stylesheet">
-</head>
+<head th:replace="template::header" />
+<link rel="stylesheet" type="text/css" th:href="@{css/mycss.css}">
 <body class="nav-md">
 <div class="container body">
     <div class="main_container">
@@ -49,8 +31,8 @@
                             <div class="x_title">
 
                                 <!-- 导航 -->
-                                <nav class="navbar navbar-inverse navbar-fixed-top ">
-                                    <div class="container ">
+                                <nav class="navbar navbar-inverse navbar-fixed-top" style="position:inherit;">
+                                    <div class="container" style="position:absolute;">
                                         <div class="navbar-header">
                                             <a class="navbar-brand" href="https://github.com/Vimmone/Chatrum">
                                                 <span class="glyphicon glyphicon-th-large"></span>
@@ -64,11 +46,11 @@
                                             </button>
                                         </div>
                                         <div class="collapse navbar-collapse" id="navbar-collapse">
-                                            <ul class="nav navbar-nav navbar-right">
+                                            <ul class="nav navbar-nav navbar-right" >
                                                 <li class="disable">
                                                     <a>
                                                         <span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;
-                                                        <span id="username"></span>
+                                                        <span id="username" style="display: none;"  th:text="${session.user.name}"></span>
                                                     </a>
                                                 </li>
                                             </ul>
@@ -105,38 +87,6 @@
                                     </div>
                                 </div>
 
-                                <!--
-                                     登陆必须先输入名字
-                                    隐藏模态框
-                                -->
-                                <div class="container">
-                                    <div class="modal fade " id="myModal" tabindex="-1" role="dialog"
-                                         aria-labelledby="myModalLabel"
-                                         aria-hidden="true" data-backdrop="static" data-keyboard="false">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h2 class="modal-title" id="myModalLabel">昵称</h2>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control input-lg"
-                                                               placeholder="请输入昵称"
-                                                               data-container="body" data-toggle="popover"
-                                                               data-placement="top"
-                                                               data-content="昵称不能为空，不能出现<或>，且不能超过9位"
-                                                               id="newname">
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-info " data-target="#newname"
-                                                            onclick="savename()">保存
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
