@@ -32,7 +32,7 @@ public class CoursewareServiceImpl extends ServiceImpl<CoursewareMapper, Coursew
 		//获得文件名
 		String name = coursewareFile.getOriginalFilename(); 
 		
-		System.out.println(dirPath +" --  "+name);
+		System.out.println(dirPath +" -- "+name);
 		//目的文件目录
         File dir = new File(dirPath);
         //获得文件，没有就新建一个

@@ -11,7 +11,7 @@
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 13/06/2019 22:58:44
+ Date: 26/06/2019 16:08:31
 */
 
 SET NAMES utf8mb4;
@@ -61,11 +61,18 @@ CREATE TABLE `classical_point`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `courseware`;
 CREATE TABLE `courseware`  (
-  `course_id` int(11) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
-  `file` longblob NULL,
+  `course_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `courseware_path` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`course_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of courseware
+-- ----------------------------
+INSERT INTO `courseware` VALUES (1, '杰哥语录.docx', 'savedFile/courseware/杰哥语录.docx');
+INSERT INTO `courseware` VALUES (2, '工具安装记录.txt', 'savedFile/courseware/工具安装记录.txt');
+INSERT INTO `courseware` VALUES (3, 'test.txt', 'savedFile/courseware/test.txt');
 
 -- ----------------------------
 -- Table structure for dialogue
@@ -190,13 +197,17 @@ CREATE TABLE `score_homework_student_relation`  (
 DROP TABLE IF EXISTS `student`;
 CREATE TABLE `student`  (
   `student_id` int(11) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
-  `sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   `score` int(3) NULL DEFAULT NULL,
-  `password` varchar(0) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   PRIMARY KEY (`student_id`) USING BTREE,
   CONSTRAINT `fk_student_user_1` FOREIGN KEY (`student_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of student
+-- ----------------------------
+INSERT INTO `student` VALUES (3, NULL);
+INSERT INTO `student` VALUES (4, NULL);
+INSERT INTO `student` VALUES (5, NULL);
 
 -- ----------------------------
 -- Table structure for teacher
@@ -207,6 +218,12 @@ CREATE TABLE `teacher`  (
   PRIMARY KEY (`teacher_id`) USING BTREE,
   CONSTRAINT `fk_teacher_user_1` FOREIGN KEY (`teacher_id`) REFERENCES `user` (`user_id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of teacher
+-- ----------------------------
+INSERT INTO `teacher` VALUES (1);
+INSERT INTO `teacher` VALUES (2);
 
 -- ----------------------------
 -- Table structure for user
@@ -220,6 +237,15 @@ CREATE TABLE `user`  (
   `sex` varchar(4) CHARACTER SET utf8 COLLATE utf8_bin NULL DEFAULT NULL,
   PRIMARY KEY (`user_id`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+INSERT INTO `user` VALUES (1, 'teacher1', '123', '刘老师', '男');
+INSERT INTO `user` VALUES (2, 'teacher2', '123', '华老师', '女');
+INSERT INTO `user` VALUES (3, '16203117', '123', '吴佳祥', '男');
+INSERT INTO `user` VALUES (4, '16203111', '123', '金根友', '男');
+INSERT INTO `user` VALUES (5, '16203130', '123', '谷伟帅', '男');
 
 -- ----------------------------
 -- Table structure for user_dialogue_relation
