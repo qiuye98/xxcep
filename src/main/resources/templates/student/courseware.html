@@ -18,7 +18,7 @@
 				<div class="">
 					<div class="page-title">
 						<div class="title_left">
-							<h3>作业</h3>
+							<h3>课件</h3>
 						</div>
 						<div th:replace="nav::title_search"></div>
 					</div>
@@ -27,33 +27,22 @@
 						<div class="col-md-12 col-sm-12 col-xs-12">
 							<div class="x_panel">
 
-								<div class="center">
-									<form class="form-inline" action="/courseware-upload" method=post>
-										<div class="form-group">
-											<input type="file" id="courseware" name="courseware" />
-										</div>
-										<input type="submit" value="上传新课件" />
-									</form>
-								</div>
-								<br />
 								<!-- start project list -->
 								<table class="table table-striped projects">
 									<thead>
 										<tr>
 											<th style="width: 5%">#</th>
-											<th style="width: 15%">#Edit</th>
-											<th style="width: 80%">Project Name</th>
+											<th style="width: 10%">#操作</th>
+											<th style="width: 85%">#文件名</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>#</td>
+										<tr th:each="courseware,status : ${coursewares}">
+											<td th:text="${status.count}"></td>
 											<td>
-												<a href="#" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> 下载 </a> 
+												<a th:href="@{/courseware/download/{id}(id=*{courseware.courseId})}" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> 下载 </a> 
 											</td>
-											<td>
-												<a>Pesamakini Backend UI</a>
-											</td>
+											<td th:text="${courseware.name}"></td>
 										</tr>
 									</tbody>
 								</table>
