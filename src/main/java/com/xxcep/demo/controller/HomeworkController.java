@@ -28,12 +28,15 @@ public class HomeworkController {
     private HomeworkService homeworkService;
 
 	@GetMapping("/student/homework")
-    public String toStudentHomework() {
+    public String toStudentHomework(Model model) {
+
+        model.addAttribute("homeworkList", homeworkService.list());
         return "student/homework";
     }
 	
     @GetMapping("/student/detail")
-    public String toStudentHomeworkDetail() {
+    public String toStudentHomeworkDetail(Model model) {
+        model.addAttribute("homeworkList", homeworkService.list());
         return "student/homework-detail";
     }
 
