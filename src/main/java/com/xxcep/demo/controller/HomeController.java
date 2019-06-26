@@ -54,7 +54,7 @@ public class HomeController {
 			return "index";
 		}
 	}
-	
+	//根据身份分发页面
 	public String judgeUser(User user) {
 		if (loginServiceImp.isTeacher(user.getUserId())) {
 			return "redirect:/teacher/student-info";
