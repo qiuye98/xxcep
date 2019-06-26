@@ -1,7 +1,7 @@
 package com.xxcep.demo.entity;
 
+import java.time.LocalDate;
 import java.io.Serializable;
-import java.time.LocalDateTime;
 
 /**
  * <p>
@@ -9,20 +9,30 @@ import java.time.LocalDateTime;
  * </p>
  *
  * @author G&H
- * @since 2019-06-13
+ * @since 2019-06-26
  */
 public class Homework implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    private String title;
+
     private Integer homeworkId;
 
-    private LocalDateTime beginDate;
+    private LocalDate beginDate;
 
-    private LocalDateTime endDate;
+    private LocalDate endDate;
 
-    private String homewordName;
+    private String content;
 
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
     public Integer getHomeworkId() {
         return homeworkId;
@@ -32,37 +42,38 @@ public class Homework implements Serializable {
         this.homeworkId = homeworkId;
     }
 
-    public LocalDateTime getBeginDate() {
+    public LocalDate getBeginDate() {
         return beginDate;
     }
 
-    public void setBeginDate(LocalDateTime beginDate) {
+    public void setBeginDate(LocalDate beginDate) {
         this.beginDate = beginDate;
     }
 
-    public LocalDateTime getEndDate() {
+    public LocalDate getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
+    public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
     }
 
-    public String getHomewordName() {
-        return homewordName;
+    public String getContent() {
+        return content;
     }
 
-    public void setHomewordName(String homewordName) {
-        this.homewordName = homewordName;
+    public void setContent(String content) {
+        this.content = content;
     }
 
     @Override
     public String toString() {
         return "Homework{" +
-        "homeworkId=" + homeworkId +
+        "title=" + title +
+        ", homeworkId=" + homeworkId +
         ", beginDate=" + beginDate +
         ", endDate=" + endDate +
-        ", homewordName=" + homewordName +
+        ", content=" + content +
         "}";
     }
 }
