@@ -30,8 +30,8 @@ public interface CoursewareMapper extends BaseMapper<Courseware> {
 //			@Result(property = "file", column = "file",jdbcType= JdbcType.BLOB)  })
 //	
 //	
-//	@Select("select * from courseware")
-//	public List<Courseware> findAll(); 
+	@Select("SELECT MAX(course_id) FROM courseware\n")
+	public int findMaxId(); 
 //	
 	
 //	@Select("select course_id,name from Courseware ")
