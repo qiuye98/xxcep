@@ -49,20 +49,18 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="x_content">
-                                <div class="row">
-                                    <h5>题目要求</h5>
-                                    做教材p300“实验5SQL语句应用”实验步骤中的（1）-（30）共30道小题
-                                    请注意截至日期！请在之前上传附件提交！！！！！
-                                </div>
-                                <div class="row">
-                                    <h5>我的答案</h5>
-                                    <div>16203130-谷伟帅-作业3.docx</div>
+                                <div class="row" th:each="hw : ${homeworkList}">
+                                    <h5 th:text="${hw.title}">题目要求</h5>
+                                    <div th:text="${hw.content}"></div>
+
                                 </div>
                                 <div class="row">
                                     <h5>上传答案</h5>
                                     <div>
-                                        <input type="file" id="file" name="myfile"/>
-                                        <input type="button" onclick="UpladFile()" value="上传"/>
+                                        <form method="POST" enctype="multipart/form-data" action="/GFile">
+                                            <input type="file" class="form-control" id="file" name="file">
+                                            <input type="submit"  value="上传"/>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
